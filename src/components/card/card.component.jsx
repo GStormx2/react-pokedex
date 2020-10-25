@@ -12,6 +12,7 @@ export const Card = (props) => {
     }
   }
   let s = '#' + props.pokemon.id;
+  let cls = 'card-stats ' + types[0];
   return (
     <div className='card-container'>
       <div className='card-image'>
@@ -25,9 +26,11 @@ export const Card = (props) => {
       <div className='card-text'>
         <span className='date'>{s}</span>
         <h1> {props.pokemon.name} </h1>
-        <h3> {str}</h3>
+        <div className='tps'>
+          {types.map(e => (<div className={e + 'T'}>{e}</div>))}
+        </div>
       </div>
-      <div className='card-stats'>
+      <div className={cls}>
         <div className='stat'>
           <div className='type'>HP</div>
           <div className='value'>{props.pokemon.health}</div>

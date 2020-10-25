@@ -1,3 +1,24 @@
+:root{
+  --statcolor: black;
+  --normal: #A8A77A;
+  --water: #6390F0;
+  --fire: #EE8130;
+  --electric: #F7D02C;
+  --grass: #7AC74C;
+  --ice: #96D9D6;
+  --fighting: #C22E28;
+  --poison: #A33EA1;
+  --ground: #E2BF65;
+  --flying: #A98FF3;
+  --psychic: #F95587;
+  --bug: #A6B91A;
+  --rock: #B6A136;
+  --ghost: #735797;
+  --dragon: #6F35FC;
+  --dark: #705746;
+  --steel: #B7B7CE;
+  --fairy: #D685AD;
+}
 .card-container{
   display: grid;
   grid-template-columns: 240px;
@@ -29,12 +50,12 @@
 }
 .card-text{
   grid-area: text;
-  padding-top: 15px;
-  margin: 25px;
+  padding-top: 25px;
+  margin: 10px;
 }
 .card-text h3 {
   color: grey;
-  font-size: 10px;
+  font-size: 13px;
 }
 .card-text h1{
   margin-top: 10px;
@@ -47,9 +68,8 @@
   grid-template-rows: 1fr;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background:#FFDE00;
+  background: var(--statcolor);
 }
-
 .card-stats .stat {
   display: flex;
   align-items: center;
@@ -69,4 +89,127 @@
 .card-stats .border{
   border-left: 1px solid black;
   border-right: 1px solid black;
+}
+.card-text .tps{
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+  font-size: 12px;
+}
+.normal{
+  background: var(--normal);
+}
+.fire{
+  background: var(--fire);
+}
+.water{
+  background: var(--water);
+  color: white;
+}
+.electric{
+  background: var(--electric);
+}
+.grass{
+  background: var(--grass);
+}
+.ice{
+  background: var(--ice);
+}
+.fighting{
+  background: var(--fighting);
+  color: white;
+}
+.poison{
+  background: var(--poison);
+  color: white;
+}
+.ground{
+  background: var(--ground);
+}
+.flying{
+  background: var(--flying);
+}
+.psychic{
+  background: var(--psychic);
+}
+.bug{
+  background: var(--bug);
+}
+.rock{
+  background: var(--rock);
+}
+.ghost{
+  background: var(--ghost);
+  color: white;
+}
+.dragon{
+  background: var(--dragon);
+  color: white;
+}
+.dark{
+  background: var(--dark);
+}
+.steel{
+  background: var(--steel);
+}
+.fairy{
+  background: var(--fairy);
+}
+
+
+
+
+.normalT{
+  color: var(--normal);
+}
+.fireT{
+  color: var(--fire);
+}
+.waterT{
+  color: var(--water);
+}
+.electricT{
+  color: var(--electric);
+}
+.grassT{
+  color: var(--grass);
+}
+.iceT{
+  color: var(--ice);
+}
+.fightingT{
+  color: var(--fighting);
+}
+.poisonT{
+  color: var(--poison);
+}
+.groundT{
+  color: var(--ground);
+}
+.flyingT{
+  color: var(--flying);
+}
+.psychicT{
+  color: var(--psychic);
+}
+.bugT{
+  color: var(--bug);
+}
+.rockT{
+  color: var(--rock);
+}
+.ghostT{
+  color: var(--ghost);
+}
+.dragonT{
+  color: var(--dragon);
+}
+.darkT{
+  color: var(--dark);
+}
+.steelT{
+  color: var(--steel);
+}
+.fairyT{
+  color: var(--fairy);
 }
