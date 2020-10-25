@@ -43,7 +43,6 @@ class App extends React.Component {
             })
         })
       });
-      //this.setState({pokemon: temp});
   }  
   
   handleChange = (e) => {
@@ -52,12 +51,20 @@ class App extends React.Component {
   
   render() {
     const { pokemon, searchField } = this.state;
-    const filteredPoke = pokemon.filter(p => p.name.includes(searchField.toLowerCase()));
+    let filteredPoke;
+    if (searchField.match(/^@/g) == '@') {
+        let str = searchField.split('@');
+        console.log(str[1]);
+        filteredPoke = pokemon.filter(p => p.types.includes(str[1].toLowerCase()));
+    } else {
+      filteredPoke = pokemon.filter(p => p.name.includes(searchField.toLowerCase()));
+    }
+    
     return (
       <div className='App'>
         <h1>PokéDex</h1>
         <SearchBox 
-          placeHolder='Seach Pokemon'
+          placeHolder='Name or @type, like @water'
           handleChange={this.handleChange}
         />
         <CardList pokemon={filteredPoke}/>
