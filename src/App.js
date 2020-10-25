@@ -39,10 +39,11 @@ class App extends React.Component {
                   defense: def,
                   types: arr 
               })
+              this.setState({pokemon: temp});
             })
         })
       });
-      this.setState({pokemon: temp});
+      //this.setState({pokemon: temp});
   }  
   
   handleChange = (e) => {
