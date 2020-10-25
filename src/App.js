@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
 
 class App extends React.Component {
   constructor() {
@@ -14,7 +15,7 @@ class App extends React.Component {
 
   componentDidMount() {
     let temp = []
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(response => response.json())
       .then(allPokemon => {
         allPokemon.results.forEach(p => {
@@ -43,10 +44,22 @@ class App extends React.Component {
       });
       this.setState({pokemon: temp});
   }  
+  
+  handleChange = (e) => {
+    this.setState({searchField: e.target.value});
+  }
+  
   render() {
+    const { pokemon, searchField } = this.state;
+    const filteredPoke = pokemon.filter(p => p.name.includes(searchField.toLowerCase()));
     return (
       <div className='App'>
-        <CardList pokemon={this.state.pokemon}/>
+        <h1>PokéDex</h1>
+        <SearchBox 
+          placeHolder='Seach Pokemon'
+          handleChange={this.handleChange}
+        />
+        <CardList pokemon={filteredPoke}/>
       </div>
     );
   }

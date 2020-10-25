@@ -5,7 +5,7 @@ import './card-list.styles.css';
 export const CardList = (props) => {
   return (
     <div className='card-list'>
-      {props.pokemon.map(e => (<Card key={e.id} pokemon={e} />))}
+      {props.pokemon.map(e => <Card key={e.id} pokemon={e} />)}
     </div>
   );
 }
