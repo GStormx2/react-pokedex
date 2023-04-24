@@ -18,7 +18,7 @@ export const Card = (props) => {
       <div className='card-image'>
         <img 
         alt={props.pokemon.name}
-        src={`https://pokeres.bastionbot.org/images/pokemon/${props.pokemon.id}.png`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.pokemon.id}.png`}
         width="180"
         height="180"
         />
